@@ -1,0 +1,48 @@
+{
+  "name": "tmp-richtextsyntax",
+  "displayName": "TextMeshPro Rich Text Syntax Highlighter",
+  "description": "Highlights rich text formatting options for Text Mesh Pro in a Unity Project",
+  "version": "0.0.1",
+  "publisher": "lmirman",
+  "repository": "https://github.com/Orange-Panda/tmp-richtextsyntax",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:yarnspinner"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tmp-richtextsyntax.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/glob": "^8.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.33.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.2"
+  }
+}
