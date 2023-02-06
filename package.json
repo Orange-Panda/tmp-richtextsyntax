@@ -22,7 +22,14 @@
         "command": "tmp-richtextsyntax.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+	"grammars": [
+		{
+			"language": "yarnspinner",
+			"scopeName": "source.yarnspinner-tmp",
+			"path": "./syntaxes/yarnspinner-tmp.tmLanguage.json"
+		}
+	]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
