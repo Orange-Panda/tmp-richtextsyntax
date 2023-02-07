@@ -5,7 +5,7 @@
 		"noparse": {
 			"name": "markup.inline.raw.tmprt",
 			"begin": "(?i)(<noparse>)",
-			"end": "(?i)(</noparse>)|$",
+			"end": "(?i)(</noparse>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" }
 			},
@@ -14,12 +14,20 @@
 			}
 		},
 		"allPatterns": {
-			"patterns": [{ "include": "#bold" }, { "include": "#italic"}, { "include": "#strikethrough" }, { "include": "#underline" }, { "include": "#link" }]
+			"patterns": [
+				{ "include": "#bold" }, 
+				{ "include": "#italic"}, 
+				{ "include": "#strikethrough" }, 
+				{ "include": "#underline" }, 
+				{ "include": "#link" },
+				{ "include": "#mark-start" },
+				{ "include": "#mark-end" }
+			]
 		},
 		"bold": {
 			"contentName": "markup.bold.tmprt",
 			"begin": "(?i)(<b>)",
-			"end": "(?i)(</b>)|$",
+			"end": "(?i)(</b>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" }
 			},
@@ -33,7 +41,7 @@
 		"italic": {
 			"contentName": "markup.italic.tmprt",
 			"begin": "(?i)(<i>)",
-			"end": "(?i)(</i>)|$",
+			"end": "(?i)(</i>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" }
 			},
@@ -47,7 +55,7 @@
 		"strikethrough": {
 			"contentName": "markup.strikethrough.tmprt",
 			"begin": "(?i)(<s>)",
-			"end": "(?i)(</s>)|$",
+			"end": "(?i)(</s>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" }
 			},
@@ -61,7 +69,7 @@
 		"underline": {
 			"contentName": "markup.underline.tmprt",
 			"begin": "(?i)(<u>)",
-			"end": "(?i)(</u>)|$",
+			"end": "(?i)(</u>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" }
 			},
@@ -75,11 +83,11 @@
 		"link": {
 			"contentName": "markup.underline.link.tmprt",
 			"begin": "(?i)(<link=)(\"[^\"]*\")(>)",
-			"end": "(?i)(</link>)|$",
+			"end": "(?i)(</link>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" },
 				"1": { "name": "punctuation.definition.tag.start" },
-				"2": { "name": "entity.name.tag.html" },
+				"2": { "name": "punctuation.section.embedded" },
 				"3": { "name": "punctuation.definition.tag.start" }
 			},
 			"endCaptures": { 
@@ -88,6 +96,21 @@
 			"patterns": [
 				{ "include": "#allPatterns" }
 			]
+		},
+		"mark-start": {
+			"match": "(?i)(<mark=)(#[a-f|0-9]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"mark-end": {
+			"match": "(?i)(</mark>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
 		}
 	}
 }
