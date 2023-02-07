@@ -1,18 +1,27 @@
 {
 	"scopeName": "source.tmprt",
-	"patterns": [{ "include": "#allPatterns" }],
+	"patterns": [{ "include": "#noparse" }, { "include": "#allPatterns" }],
 	"repository": {
+		"noparse": {
+			"name": "markup.inline.raw.tmprt",
+			"begin": "(?i)(<noparse>)",
+			"end": "(?i)(</noparse>)|$",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
 		"allPatterns": {
-			"patterns": [{ "include": "#bold" }, { "include": "#italic"}]
+			"patterns": [{ "include": "#bold" }, { "include": "#italic"}, { "include": "#strikethrough" }, { "include": "#underline" }, { "include": "#link" }]
 		},
 		"bold": {
-			"name": "markup.bold.tmprt",
-			"begin": "<b>",
-			"end": "</b>|$",
+			"contentName": "markup.bold.tmprt",
+			"begin": "(?i)(<b>)",
+			"end": "(?i)(</b>)|$",
 			"beginCaptures": {
-				"0": {
-				"name": "punctuation.definition.tag.start"
-				}
+				"0": { "name": "punctuation.definition.tag.start" }
 			},
 			"endCaptures": { 
 				"0": { "name": "punctuation.definition.tag.end" }
@@ -22,13 +31,56 @@
 			]
 		},
 		"italic": {
-			"name": "markup.italic.tmprt",
-			"begin": "<i>",
-			"end": "</i>|$",
+			"contentName": "markup.italic.tmprt",
+			"begin": "(?i)(<i>)",
+			"end": "(?i)(</i>)|$",
 			"beginCaptures": {
-				"0": {
-				"name": "punctuation.definition.tag.start"
-				}
+				"0": { "name": "punctuation.definition.tag.start" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#allPatterns" }
+			]
+		},
+		"strikethrough": {
+			"contentName": "markup.strikethrough.tmprt",
+			"begin": "(?i)(<s>)",
+			"end": "(?i)(</s>)|$",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#allPatterns" }
+			]
+		},
+		"underline": {
+			"contentName": "markup.underline.tmprt",
+			"begin": "(?i)(<u>)",
+			"end": "(?i)(</u>)|$",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#allPatterns" }
+			]
+		},
+		"link": {
+			"contentName": "markup.underline.link.tmprt",
+			"begin": "(?i)(<link=)(\"[^\"]*\")(>)",
+			"end": "(?i)(</link>)|$",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "entity.name.tag.html" },
+				"3": { "name": "punctuation.definition.tag.start" }
 			},
 			"endCaptures": { 
 				"0": { "name": "punctuation.definition.tag.end" }
