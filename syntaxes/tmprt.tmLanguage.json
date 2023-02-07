@@ -475,8 +475,10 @@
 			"end": "(?i)</style>|$",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" },
-				"1": { "name": "punctuation.section.embedded" },
-				"2": { "name": "punctuation.section.embedded" }
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.definition.tag.start" },
+				"3": { "name": "punctuation.section.embedded" },
+				"4": { "name": "punctuation.definition.tag.start" }
 			},
 			"endCaptures": { 
 				"0": { "name": "punctuation.definition.tag.end" }
