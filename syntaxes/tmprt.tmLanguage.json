@@ -21,7 +21,43 @@
 				{ "include": "#underline" }, 
 				{ "include": "#link" },
 				{ "include": "#mark-start" },
-				{ "include": "#mark-end" }
+				{ "include": "#mark-end" },
+				{ "include": "#align-start" },
+				{ "include": "#align-end" },
+				{ "include": "#color-start" },
+				{ "include": "#color-end" },
+				{ "include": "#cspace-start" },
+				{ "include": "#cspace-end" },
+				{ "include": "#indent-start" },
+				{ "include": "#indent-end" },
+				{ "include": "#line-height-start" },
+				{ "include": "#line-height-end" },
+				{ "include": "#line-indent-start" },
+				{ "include": "#line-indent-end" },
+				{ "include": "#lowercase-start" },
+				{ "include": "#lowercase-end" },
+				{ "include": "#uppercase-start" },
+				{ "include": "#uppercase-end" },
+				{ "include": "#smallcaps-start" },
+				{ "include": "#smallcaps-end" },
+				{ "include": "#margin-start" },
+				{ "include": "#margin-end" },
+				{ "include": "#mspace-start" },
+				{ "include": "#mspace-end" },
+				{ "include": "#nobr-start" },
+				{ "include": "#nobr-end" },
+				{ "include": "#page-break" },
+				{ "include": "#line-break" },
+				{ "include": "#pos-start" },
+				{ "include": "#pos-end" },
+				{ "include": "#size-start" },
+				{ "include": "#size-end" },
+				{ "include": "#voffset-start" },
+				{ "include": "#voffset-end" },
+				{ "include": "#width-start" },
+				{ "include": "#width-end" },
+				{ "include": "#sprite" },
+				{ "include": "#font" }
 			]
 		},
 		"bold": {
@@ -82,7 +118,7 @@
 		},
 		"link": {
 			"contentName": "markup.underline.link.tmprt",
-			"begin": "(?i)(<link=)(\"[^\"]*\")(>)",
+			"begin": "(?i)(<link=)(\"[^$]*\")(>)",
 			"end": "(?i)(</link>|$)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.tag.start" },
@@ -110,6 +146,326 @@
 			"match": "(?i)(</mark>|$)",
 			"captures": {
 				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"align-start": {
+			"match": "(?i)(<align=)(\"[^$]*\")(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"align-end": {
+			"match": "(?i)(</align>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"color-start": {
+			"match": "(?i)(<color=)(\"[^$]*\"|#[a-f|0-9]*|[a-z]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"color-end": {
+			"match": "(?i)(</color>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"cspace-start": {
+			"match": "(?i)(<cspace=)([^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"cspace-end": {
+			"match": "(?i)(</cspace>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"indent-start": {
+			"match": "(?i)(<indent=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"indent-end": {
+			"match": "(?i)(</indent>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"line-height-start": {
+			"match": "(?i)(<line-height=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"line-height-end": {
+			"match": "(?i)(</line-height>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"line-indent-start": {
+			"match": "(?i)(<line-indent=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"line-indent-end": {
+			"match": "(?i)(</line-indent>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"lowercase-start": {
+			"match": "(?i)(<lowercase>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"lowercase-end": {
+			"match": "(?i)(</lowercase>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"uppercase-start": {
+			"match": "(?i)(<uppercase>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"uppercase-end": {
+			"match": "(?i)(</uppercase>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"smallcaps-start": {
+			"match": "(?i)(<smallcaps>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"smallcaps-end": {
+			"match": "(?i)(</smallcaps>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"margin-start": {
+			"match": "(?i)(<margin=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"margin-end": {
+			"match": "(?i)(</margin>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"mspace-start": {
+			"match": "(?i)(<mspace=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"mspace-end": {
+			"match": "(?i)(</mspace>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"nobr-start": {
+			"match": "(?i)(<nobr>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"nobr-end": {
+			"match": "(?i)(</nobr>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"page-break": {
+			"match": "(?i)(<page>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag" }
+			}
+		},
+		"line-break": {
+			"match": "(?i)(<br>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag" }
+			}
+		},
+		"pos-start": {
+			"match": "(?i)(<pos=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"pos-end": {
+			"match": "(?i)(</pos>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"size-start": {
+			"match": "(?i)(<size=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"size-end": {
+			"match": "(?i)(</size>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"voffset-start": {
+			"match": "(?i)(<voffset=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"voffset-end": {
+			"match": "(?i)(</voffset>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"width-start": {
+			"match": "(?i)(<width=)([0-9|-]+[^>]*)(>)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.definition.tag.start" },
+				"2": { "name": "punctuation.section.embedded" },
+				"3": { "name": "punctuation.definition.tag.start" }
+			}
+		},
+		"width-end": {
+			"match": "(?i)(</width>|$)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.end" }
+			}
+		},
+		"sprite": {
+			"begin": "(?i)<sprite",
+			"end": "(?i)>",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#sprite-index" },
+				{ "include": "#sprite-name" },
+				{ "include": "#sprite-color" },
+				{ "include": "#sprite-immediate" }
+			]
+		},
+		"sprite-index": {
+			"match": "(?i)index=([0-9]+)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
+			}
+		},
+		"sprite-name": {
+			"match": "(?i)name=(\"[^\"]*\")",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
+			}
+		},
+		"sprite-color": {
+			"match": "(?i)color=(\"[^\"]*\"|#[a-f|0-9]*|[a-z]*)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
+			}
+		},
+		"sprite-immediate": {
+			"match": "(?i)=([0-9]+)",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
+			}
+		},
+		"font": {
+			"begin": "(?i)<font",
+			"end": "(?i)>",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#font-name" },
+				{ "include": "#font-material" },
+				{ "include": "#font-immediate" }
+			]
+		},
+		"font-name": {
+			"match": "(?i)name=(\"[^\"]*\")",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
+			}
+		},
+		"font-material": {
+			"match": "(?i)material=(\"[^\"]*\")",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
+			}
+		},
+		"font-immediate": {
+			"match": "(?i)=(\"[^\"]*\")",
+			"captures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" }
 			}
 		}
 	}
