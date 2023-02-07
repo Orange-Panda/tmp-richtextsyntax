@@ -57,11 +57,12 @@
 				{ "include": "#width-start" },
 				{ "include": "#width-end" },
 				{ "include": "#sprite" },
-				{ "include": "#font" }
+				{ "include": "#font" },
+				{ "include": "#style" }
 			]
 		},
 		"bold": {
-			"contentName": "markup.bold.tmprt",
+			"contentName": "strong.tmprt",
 			"begin": "(?i)(<b>)",
 			"end": "(?i)(</b>|$)",
 			"beginCaptures": {
@@ -75,7 +76,7 @@
 			]
 		},
 		"italic": {
-			"contentName": "markup.italic.tmprt",
+			"contentName": "emphasis.tmprt",
 			"begin": "(?i)(<i>)",
 			"end": "(?i)(</i>|$)",
 			"beginCaptures": {
@@ -467,6 +468,22 @@
 				"0": { "name": "punctuation.definition.tag.start" },
 				"1": { "name": "punctuation.section.embedded" }
 			}
+		},
+		"style": {
+			"contentName": "tmprt.styles.$3",
+			"begin": "(?i)<style=((\"|[^a-z]*)([^>|^\"]*)(\"|[^a-z]*))>",
+			"end": "(?i)</style>|$",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.tag.start" },
+				"1": { "name": "punctuation.section.embedded" },
+				"2": { "name": "punctuation.section.embedded" }
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#allPatterns" }
+			]
 		}
 	}
 }
