@@ -13,6 +13,8 @@
     "Other"
   ],
   "activationEvents": [
+	"onLanguage:plaintext",
+	"onLanguage:markdown",
     "onLanguage:yarnspinner"
   ],
   "main": "./out/extension.js",
@@ -25,9 +27,19 @@
     ],
 	"grammars": [
 		{
+			"language": "plaintext",
+			"scopeName": "source.tmprt",
+			"path": "./syntaxes/tmprt.tmLanguage.json"
+		},
+		{
+			"language": "markdown",
+			"scopeName": "source.tmprt",
+			"path": "./syntaxes/tmprt.tmLanguage.json"
+		},
+		{
 			"language": "yarnspinner",
-			"scopeName": "source.yarnspinner-tmp",
-			"path": "./syntaxes/yarnspinner-tmp.tmLanguage.json"
+			"scopeName": "source.tmprt",
+			"path": "./syntaxes/tmprt.tmLanguage.json"
 		}
 	]
   },

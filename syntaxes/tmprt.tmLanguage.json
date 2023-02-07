@@ -1,0 +1,41 @@
+{
+	"scopeName": "source.tmprt",
+	"patterns": [{ "include": "#allPatterns" }],
+	"repository": {
+		"allPatterns": {
+			"patterns": [{ "include": "#bold" }, { "include": "#italic"}]
+		},
+		"bold": {
+			"name": "markup.bold.tmprt",
+			"begin": "<b>",
+			"end": "</b>|$",
+			"beginCaptures": {
+				"0": {
+				"name": "punctuation.definition.tag.start"
+				}
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#allPatterns" }
+			]
+		},
+		"italic": {
+			"name": "markup.italic.tmprt",
+			"begin": "<i>",
+			"end": "</i>|$",
+			"beginCaptures": {
+				"0": {
+				"name": "punctuation.definition.tag.start"
+				}
+			},
+			"endCaptures": { 
+				"0": { "name": "punctuation.definition.tag.end" }
+			},
+			"patterns": [
+				{ "include": "#allPatterns" }
+			]
+		}
+	}
+}

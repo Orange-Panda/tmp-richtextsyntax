@@ -16,5 +16,12 @@ This extension contributes the following settings:
 * `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
+-
 
-- 
+## Limitations
+- By design the extension ends continuous tags when a newline begins. This is because some files are read and displayed line by line without the expectation for closing tags to be used.
+	- You may opt to use the `<br>` tag to keep it all on one line if your text is not very long
+	- This may become a preference in the future if it is possible.
+- Starting a continuous Tag "A" then starting a continuous Tag "B" means that tag "A" can't be closed until tag "B" is closed.
+	- Example: `<b>bold <i>bold and italic</b> italic</i>` will fail to close the bold tag because it was busy in the italics tag
+	- This is occurs *only* in the code editor and TextMeshPro will render the text as expected.
