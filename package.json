@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "publisher": "lmirman",
   "repository": "https://github.com/Orange-Panda/tmp-richtextsyntax",
+  "icon": "icon.png",
   "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
