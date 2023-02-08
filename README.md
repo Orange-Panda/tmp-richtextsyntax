@@ -1,22 +1,26 @@
 # Text Mesh Pro Rich Text Syntax Highlighter for Visual Studio Code
 
-This Visual Studio Code Extension will highlight Text Mesh Pro [Rich Text](http://digitalnativestudios.com/textmeshpro/docs/rich-text/) to make writing text files used in the Unity Engine more legible at a glance.
+![Syntax Preview](.github/images/syntax-preview.png)
+This Visual Studio Code Extension will highlight Text Mesh Pro [Rich Text](http://digitalnativestudios.com/textmeshpro/docs/rich-text/) syntax to make writing text files used in the Unity Game Engine more legible at a glance.
 
-## TODO: Features
+## Features
 
-TODO: There will be an animation of typing out rich text and it highlighting here
+### Full Inline Preview
+![Full Support Preview](.github/images/full-syntax-preview.png)
+- Full support for previewing: `<b>`, `<i>`, `<s>`, `<u>`, `<noparse>`, and `<link>`.
+	- Full support highlights open and closing tags and will apply theming to the content between tags such as emphasizing or underling text.
 
-## TODO: Extension Settings
+### Partial Preview
+![Partial Support Preview](.github/images/partial-syntax-preview.png)
+- Partial support for previewing all other rich text components. 
+	- Partial support highlights open and closing tags but offers no special appearance to the content between the tags.
+	- Partial support for: `<mark>`, `<align>`, `<color>`, `<cspace>`, `<indent>`, `<line-height>`, `<line-indent>`, `<lowercase>`, `<uppercase>`, `<smallcaps>`, `<margin>`, `<mspace>`, `<nobr>`, `<page>`, `<br>`, `<pos>`, `<size>`, `<voffset>`, `<width>`, and `<sprite>`.
 
-Include VS Code settings through the `contributes.configuration` extension point.
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
--
+### Custom Styles
+![Style Syntax Definition](.github/images/style-syntax-definition.png)
+- Special theming support for `<style>`.
+	- Special theming allows for custom `editor.tokenColorCustomization` in your Visual Studio Code preferences to apply styling to each theme supported by your project.
+	- The scope of special themes follows the format of `tmprt.styles.yourStyleNameGoesHere`.
 
 ## Limitations
 - By design the extension ends continuous tags when a newline begins. This is because some files are read and displayed line by line without the expectation for closing tags to be used.
@@ -25,3 +29,4 @@ This extension contributes the following settings:
 - Starting a continuous Tag "A" then starting a continuous Tag "B" means that tag "A" can't be closed until tag "B" is closed.
 	- Example: `<b>bold <i>bold and italic</b> italic</i>` will fail to close the bold tag because it was busy in the italics tag
 	- This is occurs *only* in the code editor and TextMeshPro will render the text as expected.
+- Currently restricted to `markdown`, `plaintext`, and `yarnspinner` languages.

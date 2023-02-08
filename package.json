@@ -2,7 +2,7 @@
   "name": "tmp-richtextsyntax",
   "displayName": "TextMeshPro Rich Text Syntax Highlighter",
   "description": "Highlights rich text formatting options for Text Mesh Pro in a Unity Project",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "lmirman",
   "repository": "https://github.com/Orange-Panda/tmp-richtextsyntax",
   "license": "MIT",
