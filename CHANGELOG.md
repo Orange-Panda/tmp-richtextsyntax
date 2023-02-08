@@ -4,6 +4,11 @@ All notable changes to the "tmp-richtextsyntax" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.1.1] - 2023-02-07
+
+### Fixed
+- Fixed issue where comments were no longer styled in `yarnspinner` language
+
 ## [1.1.0] - 2023-02-07
 
 ### Changed

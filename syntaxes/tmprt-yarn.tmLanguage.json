@@ -1,5 +1,14 @@
 {
 	"scopeName": "source.tmprt.yarn",
-	"patterns": [{ "include": "source.tmprt" }],
-	"injectionSelector": "L:source.yarnspinner"
+	"patterns": [{ "include": "#comments" }, { "include": "source.tmprt" } ],
+	"injectionSelector": "L:source.yarnspinner",
+	"repository": {
+		"comments": {
+			"patterns": [{
+					"name": "comment.line.double-slash.yarnspinner",
+					"begin": "\/\/",
+					"end": "$"
+			}]
+		}
+	}
 }
