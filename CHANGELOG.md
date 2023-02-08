@@ -4,6 +4,15 @@ All notable changes to the "tmp-richtextsyntax" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [v1.0.0]
+## [1.1.0] - 2023-02-07
 
-- Initial release
+### Changed
+- The extension now loads immediately
+- The grammars for syntax highlighting are now injected into pre-existing grammar instead of overriding them
+
+### Removed
+- Removed useless `hello world` command
+
+## [1.0.0] - 2023-02-07
+
+- Initial <br>release

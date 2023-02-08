@@ -1,0 +1,5 @@
+{
+	"scopeName": "source.tmprt.markdown",
+	"patterns": [{ "include": "source.tmprt" }],
+	"injectionSelector": "L:text.html.markdown"
+}

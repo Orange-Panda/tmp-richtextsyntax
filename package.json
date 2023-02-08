@@ -14,33 +14,25 @@
     "Other"
   ],
   "activationEvents": [
-	"onLanguage:plaintext",
-	"onLanguage:markdown",
-    "onLanguage:yarnspinner"
+	"onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "tmp-richtextsyntax.helloWorld",
-        "title": "Hello World"
-      }
-    ],
 	"grammars": [
 		{
-			"language": "plaintext",
 			"scopeName": "source.tmprt",
-			"path": "./syntaxes/tmprt.tmLanguage.json"
+			"path": "./syntaxes/tmprt.tmLanguage.json",
+			"language": "plaintext"
 		},
 		{
-			"language": "markdown",
-			"scopeName": "source.tmprt",
-			"path": "./syntaxes/tmprt.tmLanguage.json"
+			"scopeName": "source.tmprt.markdown",
+			"path": "./syntaxes/tmprt-md.tmLanguage.json",
+			"injectTo": ["text.html.markdown"]
 		},
 		{
-			"language": "yarnspinner",
-			"scopeName": "source.tmprt",
-			"path": "./syntaxes/tmprt.tmLanguage.json"
+			"scopeName": "source.tmprt.yarn",
+			"path": "./syntaxes/tmprt-yarn.tmLanguage.json",
+			"injectTo": ["source.yarnspinner"]
 		}
 	]
   },

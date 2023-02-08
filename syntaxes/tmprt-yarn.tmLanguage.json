@@ -1,0 +1,5 @@
+{
+	"scopeName": "source.tmprt.yarn",
+	"patterns": [{ "include": "source.tmprt" }],
+	"injectionSelector": "L:source.yarnspinner"
+}
