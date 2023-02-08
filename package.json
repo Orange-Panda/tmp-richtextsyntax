@@ -2,7 +2,7 @@
   "name": "tmp-richtextsyntax",
   "displayName": "TextMeshPro Rich Text Syntax Highlighter",
   "description": "Highlights rich text formatting options for Text Mesh Pro in a Unity Project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "lmirman",
   "repository": "https://github.com/Orange-Panda/tmp-richtextsyntax",
   "icon": "icon.png",
@@ -14,27 +14,31 @@
     "Other"
   ],
   "activationEvents": [
-	"onStartupFinished"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
-	"grammars": [
-		{
-			"scopeName": "source.tmprt",
-			"path": "./syntaxes/tmprt.tmLanguage.json",
-			"language": "plaintext"
-		},
-		{
-			"scopeName": "source.tmprt.markdown",
-			"path": "./syntaxes/tmprt-md.tmLanguage.json",
-			"injectTo": ["text.html.markdown"]
-		},
-		{
-			"scopeName": "source.tmprt.yarn",
-			"path": "./syntaxes/tmprt-yarn.tmLanguage.json",
-			"injectTo": ["source.yarnspinner"]
-		}
-	]
+    "grammars": [
+      {
+        "scopeName": "source.tmprt",
+        "path": "./syntaxes/tmprt.tmLanguage.json",
+        "language": "plaintext"
+      },
+      {
+        "scopeName": "source.tmprt.markdown",
+        "path": "./syntaxes/tmprt-md.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ]
+      },
+      {
+        "scopeName": "source.tmprt.yarn",
+        "path": "./syntaxes/tmprt-yarn.tmLanguage.json",
+        "injectTo": [
+          "source.yarnspinner"
+        ]
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
