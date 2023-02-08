@@ -1,23 +1,27 @@
 # Text Mesh Pro Rich Text Syntax Highlighter for Visual Studio Code
 
 ![Syntax Preview](.github/images/syntax-preview.png)
+
 This Visual Studio Code Extension will highlight Text Mesh Pro [Rich Text](http://digitalnativestudios.com/textmeshpro/docs/rich-text/) syntax to make writing text files used in the Unity Game Engine more legible at a glance.
 
 ## Features
 
 ### Full Inline Preview
 ![Full Support Preview](.github/images/full-syntax-preview.png)
+
 - Full support for previewing: `<b>`, `<i>`, `<s>`, `<u>`, `<noparse>`, and `<link>`.
 	- Full support highlights open and closing tags and will apply theming to the content between tags such as emphasizing or underling text.
 
 ### Partial Preview
 ![Partial Support Preview](.github/images/partial-syntax-preview.png)
+
 - Partial support for previewing all other rich text components. 
 	- Partial support highlights open and closing tags but offers no special appearance to the content between the tags.
 	- Partial support for: `<mark>`, `<align>`, `<color>`, `<cspace>`, `<indent>`, `<line-height>`, `<line-indent>`, `<lowercase>`, `<uppercase>`, `<smallcaps>`, `<margin>`, `<mspace>`, `<nobr>`, `<page>`, `<br>`, `<pos>`, `<size>`, `<voffset>`, `<width>`, and `<sprite>`.
 
 ### Custom Styles
 ![Style Syntax Definition](.github/images/style-syntax-definition.png)
+
 - Special theming support for `<style>`.
 	- Special theming allows for custom `editor.tokenColorCustomization` in your Visual Studio Code preferences to apply styling to each theme supported by your project.
 	- The scope of special themes follows the format of `tmprt.styles.yourStyleNameGoesHere`.
