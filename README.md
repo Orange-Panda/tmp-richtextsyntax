@@ -34,3 +34,5 @@ This Visual Studio Code Extension will highlight Text Mesh Pro [Rich Text](http:
 	- Example: `<b>bold <i>bold and italic</b> italic</i>` will fail to close the bold tag because it was busy in the italics tag
 	- This is occurs *only* in the code editor and TextMeshPro will render the text as expected.
 - Currently restricted to `markdown`, `plaintext`, and `yarnspinner` languages.
+- The style definitions for style syntax **are case-sensitive**. Therefore a style of `<style="Header">` will not match with `tmprt.styles.header` because it is expecting `tmprt.styles.Header`.
+	- A best practice is to keep your `<style>` definitions consistent with the exact casing as defined in your `TMP_Style Sheet`
